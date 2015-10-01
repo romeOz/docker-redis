@@ -6,7 +6,7 @@ Table of Contents
  * [Command-line arguments](#command-line-arguments)
  * [Setting a specific password](#setting-a-specific-password) 
  * [Persistence](#persistence)
- * [Creating cluster **(support Redis 3.0+)**](#reating-cluster-support-redis-30)
+ * [Creating cluster **(requires Redis 3.0+)**](#reating-cluster-requires-redis-30)
  * [Environment variables](#environment-variables) 
  * [Logging](#logging) 
  * [Out of the box](#out-of-the-box)
@@ -75,7 +75,7 @@ docker run --name redis -d \
   romeoz/docker-redis --appendonly yes
 ```
 
-Creating cluster **(support Redis 3.0+)**
+Creating cluster **(requires Redis 3.0+)**
 ---------------------
 
 Redis Cluster provides a way to run a Redis installation where data is automatically sharded across multiple Redis nodes.
