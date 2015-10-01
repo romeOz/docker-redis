@@ -6,7 +6,7 @@ Table of Contents
  * [Command-line arguments](#command-line-arguments)
  * [Setting a specific password](#setting-a-specific-password) 
  * [Persistence](#persistence)
- * [Creating cluster **(requires Redis 3.0+)**](#reating-cluster-requires-redis-30)
+ * [Creating cluster **(requires Redis 3.0+)**](#creating-cluster-requires-redis-30)
  * [Environment variables](#environment-variables) 
  * [Logging](#logging) 
  * [Out of the box](#out-of-the-box)
