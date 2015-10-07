@@ -58,7 +58,7 @@ EOF
 
 # allow arguments to be passed to redis-server
 if [[ ${1:0:1} = '-' ]]; then
-  EXTRA_ARGS="$@"
+  EXTRA_OPTS="$@"
   set --
 fi
 
@@ -66,7 +66,7 @@ fi
 if [[ -z ${1} ]]; then
   echo "Starting redis-server..."
   exec start-stop-daemon --start --chuid ${REDIS_USER}:${REDIS_USER} --exec $(which redis-server) -- \
-    ${REDIS_CONF} ${REDIS_PASSWORD:+--requirepass $REDIS_PASSWORD} ${EXTRA_ARGS}
+    ${REDIS_CONF} ${REDIS_PASSWORD:+--requirepass $REDIS_PASSWORD} ${EXTRA_OPTS}
 else
   exec "$@"
 fi

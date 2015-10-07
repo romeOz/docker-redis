@@ -43,7 +43,7 @@ docker run --name redis -d \
 Command-line arguments
 -------------------
 
-You can customize the launch command of Redis server by specifying arguments to redis on the docker run command. For example the following command for persistent storage:
+You can customize the launch command of Redis server by specifying arguments to `redis` on the docker run command. For example the following command for persistent storage:
 
 ```bash
 docker run --name redis -d \
