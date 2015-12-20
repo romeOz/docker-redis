@@ -2,7 +2,7 @@ FROM ubuntu:trusty
 MAINTAINER romeOz <serggalka@gmail.com>
 
 
-ENV REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-2.8.23.tar.gz \
+ENV REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-2.8.24.tar.gz \
     REDIS_USER=redis \
     REDIS_CONF=/etc/redis/redis.conf \
     REDIS_DATA_DIR=/var/lib/redis \
