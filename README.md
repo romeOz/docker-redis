@@ -14,7 +14,7 @@ Table of Contents
 Installation
 -------------------
 
- * [Install Docker](https://docs.docker.com/installation/) or [askubuntu](http://askubuntu.com/a/473720)
+ * [Install Docker 1.9+](https://docs.docker.com/installation/) or [askubuntu](http://askubuntu.com/a/473720)
  * Pull the latest version of the image.
  
 ```bash
@@ -32,7 +32,7 @@ docker build -t="$USER/redis" .
 Quick Start
 -------------------
 
-Run the redis image:
+Run the redis container:
 
 ```bash
 docker run --name redis -d \
@@ -83,7 +83,10 @@ Redis Cluster provides a way to run a Redis installation where data is automatic
 Create nodes:
 
 ```bash
+docker network create redis_net
+
 docker run --name node1 -d \
+  --net redis_net
   -e 'REDIS_CLUSTER_ENABLED=true' \
   romeoz/docker-redis --appendonly yes
 ```
@@ -96,7 +99,7 @@ Use the 6-node as a provider:
 
 ```bash
 docker run --name node6 -d \
-  --link node1:node1 --link node2:node2 --link node3:node3 --link node4:node4 --link node5:node5
+  --net redis_net
   -e 'REDIS_CLUSTER_ENABLED=true' \
   romeoz/docker-redis --appendonly yes
 ```
@@ -174,10 +177,10 @@ Create the file `/etc/logrotate.d/docker-containers` with the following text ins
 
 Out of the box
 -------------------
- * Ubuntu 14.04.3 (LTS)
- * Redis 2.8/3.0
+ * Ubuntu 14.04 LTS
+ * Redis 2.8 or 3.0
 
 License
 -------------------
 
-Redis container image is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Redis docker image is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
