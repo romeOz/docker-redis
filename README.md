@@ -104,6 +104,8 @@ docker run --name node6 -d \
   romeoz/docker-redis --appendonly yes
 ```
 
+>For Redis 3.2 param `protected-mode` must be as `no`. Example: `docker exec -it node1 bash -c "echo 'CONFIG SET protected-mode no' | redis-cli -c"` or `protected-mode no` to redis.conf.
+
 Now that we have a number of instances running, we need to create our cluster by writing some meaningful configuration to the nodes. For this we use the utility `redis-trib`:
 
 ```bash
@@ -178,7 +180,7 @@ Create the file `/etc/logrotate.d/docker-containers` with the following text ins
 Out of the box
 -------------------
  * Ubuntu 14.04 LTS
- * Redis 2.8 or 3.0
+ * Redis 2.8, 3.0 or 3.2
 
 License
 -------------------
