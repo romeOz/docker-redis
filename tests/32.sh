@@ -47,12 +47,12 @@ docker run --name node6 -d --net redis_test_net -e 'REDIS_CLUSTER_ENABLED=true' 
 
 echo
 echo "-- Protected mode as 'no' for nodes"
-docker exec -it node1 bash -c "echo 'CONFIG SET protected-mode no' | redis-cli -c"
-docker exec -it node2 bash -c "echo 'CONFIG SET protected-mode no' | redis-cli -c"
-docker exec -it node3 bash -c "echo 'CONFIG SET protected-mode no' | redis-cli -c"
-docker exec -it node4 bash -c "echo 'CONFIG SET protected-mode no' | redis-cli -c"
-docker exec -it node5 bash -c "echo 'CONFIG SET protected-mode no' | redis-cli -c"
-docker exec -it node6 bash -c "echo 'CONFIG SET protected-mode no' | redis-cli -c"; sleep 5
+docker exec -it node1 bash -c "echo -e 'CONFIG SET protected-mode no' | redis-cli -c"
+docker exec -it node2 bash -c "echo -e 'CONFIG SET protected-mode no' | redis-cli -c"
+docker exec -it node3 bash -c "echo -e 'CONFIG SET protected-mode no' | redis-cli -c"
+docker exec -it node4 bash -c "echo -e 'CONFIG SET protected-mode no' | redis-cli -c"
+docker exec -it node5 bash -c "echo -e 'CONFIG SET protected-mode no' | redis-cli -c"
+docker exec -it node6 bash -c "echo -e 'CONFIG SET protected-mode no' | redis-cli -c"; sleep 5
 
 echo
 echo "-- Create cluster"

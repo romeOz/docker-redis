@@ -1,8 +1,8 @@
-FROM ubuntu:trusty
+FROM ubuntu:xenial
 MAINTAINER romeOz <serggalka@gmail.com>
 
 
-ENV REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-3.2.4.tar.gz \
+ENV REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-3.2.5.tar.gz \
     REDIS_USER=redis \
     REDIS_CONF=/etc/redis/redis.conf \
     REDIS_DATA_DIR=/var/lib/redis \
@@ -13,7 +13,7 @@ COPY ./entrypoint.sh /sbin/entrypoint.sh
 
 RUN buildDeps='gcc libc6-dev make curl' \
 	&& set -x \
-	&& apt-get update && apt-get install -y $buildDeps ruby --no-install-recommends \
+	&& apt-get update && apt-get install -y $buildDeps ruby net-tools --no-install-recommends \
 	&& mkdir -p /tmp/redis \
 	&& curl -sSL "$REDIS_DOWNLOAD_URL" -o redis.tar.gz \
 	&& tar -xzf redis.tar.gz -C /tmp/redis --strip-components=1 \
