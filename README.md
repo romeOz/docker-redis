@@ -180,7 +180,7 @@ Create the file `/etc/logrotate.d/docker-containers` with the following text ins
 Out of the box
 -------------------
  * Ubuntu 14.04 LTS
- * Redis 2.8, 3.0 or 3.2
+ * Redis 2.8, 3.0, 3.2 or 4.0
 
 License
 -------------------
